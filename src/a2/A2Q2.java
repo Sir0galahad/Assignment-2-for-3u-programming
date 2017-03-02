@@ -57,9 +57,11 @@ public class A2Q2 {
         new Wall(ez, 1, 32, Direction.EAST);
         new Thing(ez, 1, 33);
         while (true) {
+            //if your front is clear move forward
             if (memes.frontIsClear()) {
                 memes.move();
             }
+            //when you come to a hurde jump it
             else{
             memes.turnLeft();
             memes.move();
@@ -73,6 +75,7 @@ public class A2Q2 {
             memes.move();
             memes.turnLeft();
             }
+            //stop at the finish line
             if (memes.canPickThing()) {
                 break;
             }

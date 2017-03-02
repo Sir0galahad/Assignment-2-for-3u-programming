@@ -19,58 +19,33 @@ public class A2Q3 {
      */
     public static void main(String[] args) {
         City ez = new City();
-        Robot memes = new Robot(ez, 48, 75, Direction.EAST);
+        Robot memes = new Robot(ez, 5, 5, Direction.EAST);
+        //getting robot to 0 on the x axis
         while (memes.getAvenue() < 0) {
-            if (memes.getDirection() == Direction.NORTH) {
-                memes.turnLeft();
-                memes.turnLeft();
-                memes.turnLeft();
-            }
-            if (memes.getDirection() == Direction.SOUTH) {
-                memes.turnLeft();
-            }
-            if (memes.getDirection() == Direction.WEST) {
-                memes.turnLeft();
+            while (!(memes.getDirection() == Direction.EAST)) {
                 memes.turnLeft();
             }
             memes.move();
         }
         while (memes.getAvenue() > 0) {
-            if (memes.getDirection() == Direction.NORTH) {
-                memes.turnLeft();
-            }
-            if (memes.getDirection() == Direction.SOUTH) {
-                memes.turnLeft();
-                memes.turnLeft();
-                memes.turnLeft();
-            }
-            if (memes.getDirection() == Direction.EAST) {
-                memes.turnLeft();
+            while (!(memes.getDirection() == Direction.WEST)) {
                 memes.turnLeft();
             }
             memes.move();
+        }
+        
+        //getting robot to 0 on y axis
+        while (memes.getStreet() < 0) {
+            while (!(memes.getDirection() == Direction.SOUTH)) {
+                memes.turnLeft();
             }
-            while (memes.getStreet() < 0) {
-                if (memes.getDirection() == Direction.EAST) {
-                    memes.turnLeft();
-                    memes.turnLeft();
-                    memes.turnLeft();
-                }
-                if (memes.getDirection() == Direction.WEST) {
-                    memes.turnLeft();
-                }
-                memes.move();
+            memes.move();
+        }
+        while (memes.getStreet() > 0) {
+            while (!(memes.getDirection() == Direction.NORTH)) {
+                memes.turnLeft();
             }
-            while (memes.getStreet() > 0) {
-                if (memes.getDirection() == Direction.WEST) {
-                    memes.turnLeft();
-                    memes.turnLeft();
-                    memes.turnLeft();
-                }
-                if (memes.getDirection() == Direction.EAST) {
-                    memes.turnLeft();
-                }
-                memes.move();
-            }
+            memes.move();
         }
     }
+}

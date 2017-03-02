@@ -46,6 +46,7 @@ public class A2Q4 {
         new Wall(ez, 3, 2, Direction.WEST);
         new Wall(ez, 3, 3, Direction.EAST);
         new Wall(ez, 3, 3, Direction.SOUTH);
+        //infinite loop of patroling one section of castle
         while (true) {
             memes.turnLeft();
             memes.move();
